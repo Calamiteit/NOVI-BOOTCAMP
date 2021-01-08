@@ -1,11 +1,11 @@
 :root {
-    --bar-width: 500px;  /* standard: 50px; met deze waarde mag je spelen */
-    --bar-height: 100px; /* standard: 10px; met deze waarde mag je spelen */
+    --bar-width: 500px;  /* default: 50px; met deze waarde mag je spelen */
+    --bar-height: 100px; /* default: 10px; met deze waarde mag je spelen */
     /* ondanks het veranderen van de width en height waarde zal de hamburger */
     /* blijven werken. Zolang deze in het scherm past ziet het er ook nog    */
     /* fatsoenlijk uit. */
-    /* werd eerst vaker gebruikt. Nu maar 1 keer dus zou ook bij 'transition */
-    --transition-time: 1s;                                   /* kunnen staan */
+    /* de var transition-time werd eerst vaker gebruikt. Nu maar 1 keer dus */
+    --transition-time: 0.3s;       /* zou ook bij 'transition  kunnen staan */
     --space-between: calc(2* var(--bar-height));
 }
 
@@ -77,4 +77,4 @@
     border-style: none;
 }
 
-/* PS.. Kleurtjes zijn er in gelaten voor de leuk
+/* PS.. Kleurtjes zijn er in gelaten voor de leuk */
