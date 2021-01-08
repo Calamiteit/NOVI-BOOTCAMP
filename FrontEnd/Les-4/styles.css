@@ -1,0 +1,80 @@
+:root {
+    --bar-width: 500px;  /* standard: 50px; met deze waarde mag je spelen */
+    --bar-height: 100px; /* standard: 10px; met deze waarde mag je spelen */
+    /* ondanks het veranderen van de width en height waarde zal de hamburger */
+    /* blijven werken. Zolang deze in het scherm past ziet het er ook nog    */
+    /* fatsoenlijk uit. */
+    /* werd eerst vaker gebruikt. Nu maar 1 keer dus zou ook bij 'transition */
+    --transition-time: 1s;                                   /* kunnen staan */
+    --space-between: calc(2* var(--bar-height));
+}
+
+/* geen idee waarom de middelste balk (div #menu) in fadet */
+/* bij de eerste keer openen kwam deze al binnen 'vliegen' */
+
+#container {
+    position: absolute;
+    padding: 0;
+    /* container border is for perspective only */
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkred;
+    top: 50px;
+    left: 50px;
+    height: calc(3 * var(--bar-height) + var(--space-between));
+    width: var(--bar-width);
+}
+
+#menu {
+    position: relative;
+    top: calc(2 * var(--bar-height));
+}
+
+#menu,
+#menu::before,
+#menu::after {
+    background-color: crimson;
+    width: var(--bar-width);
+    height: var(--bar-height);
+    transition: var(--transition-time);
+}
+
+#menu::before,
+#menu::after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+#menu::before {
+    top: calc(-1 * (var(--space-between)));
+}
+
+#menu::after {
+    top: var(--space-between);
+}
+
+#container:hover #menu::before {
+    background-color: orangered;
+    transform: rotate(45deg);
+    top: 0;
+}
+
+#container:hover #menu {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#container:hover #menu::after {
+    background-color: orangered;
+    /* er staat een typo in de opdracht. Het onderste balkje moet */
+    /* natuurlijk naar boven draaien en niet naar beneden draaien */
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+#container:hover {
+    border-style: none;
+}
+
+/* PS.. Kleurtjes zijn er in gelaten voor de leuk
